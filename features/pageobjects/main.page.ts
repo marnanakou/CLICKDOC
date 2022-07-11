@@ -15,6 +15,9 @@ class MainPage extends Page {
 
     public async clickSearchDoctors() {
         await this.searchDoctorsBtn.click();
+    }
+
+    public async redirectedToSearchPage(){
         await expect(browser).toHaveUrl('https://demo.clickdoc.de/cd-de/search')
     }
 }

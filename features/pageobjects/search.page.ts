@@ -1,6 +1,8 @@
 import Page from './page'
 
 class SearchPage extends Page {
+
+    
     get clickSearchDoctorsBtn (){
         return $('[title="Search Input"]');
     }
