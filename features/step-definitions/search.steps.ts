@@ -1,4 +1,5 @@
 import { Given, When, Then } from '@cucumber/cucumber';
+import { isAwaitExpression } from 'typescript';
 
 import MainPage from '../pageobjects/main.page';
 import SearchPage from '../pageobjects/search.page';
@@ -16,11 +17,10 @@ When(/I click on the doctors search button/, async () => {
     await MainPage.clickSearchDoctors()
 });
 
-When(/^I click on searchBtn/, async () => {
-    await SearchPage
-
+When(/I go to the search page/, async () => {
+    await MainPage.redirectedToSearchPage()
 });
 
-Then(/^I validat page header \"([^\"]*)\"$/, async (header: string) => {
-    await assertions.toHaveText(chaiPage.getHeader(), header)
-});
+// Then(/I insert the searchterm on the input search field/, async () => {
+//     await SearchPage.
+// });

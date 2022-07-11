@@ -5,7 +5,7 @@ Feature: CLICKDOC Page
     Given I open the browser and navigate on the homepage
     And I click on Alle akzeptieren button
     When I click on the doctors search button 
-#   And I go to https://demo.clickdoc.de/cd-de/search
+    And I go to the search page
 #   And I insert the searchterm on the input search field 
 #   And I click on the search button
 #   Then I should see as a result Dr Peter Test and Dr Peter Test ABD 
