@@ -4,20 +4,20 @@ import MainPage from '../pageobjects/main.page';
 import SearchPage from '../pageobjects/search.page';
 
 
-Given('I open the browser and navigate on the homepage', async () => {
+Given(/I open the browser and navigate on the homepage/, async () => {
     await MainPage.open("/")
 });
+
+Given(/I click on Alle akzeptieren button/, async () => {
+    await MainPage.acceptCookies()
+})
 
 When(/I click on the doctors search button/, async () => {
     await MainPage.clickSearchDoctors()
 });
 
-When(/^I click on searchBtn/, async (fname: string, lname: string) => {
-    const fname_input = $('[name-firstname]');
-    const lastname_input = $('[last-firstname]')
-
-    await (await fname_input).setValue(fname)
-    await (await lastname_input).setValue(lname)
+When(/^I click on searchBtn/, async () => {
+    await SearchPage
 
 });
 

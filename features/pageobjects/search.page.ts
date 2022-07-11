@@ -1,19 +1,27 @@
 import Page from './page'
 
 class SearchPage extends Page {
-    get searchDoctorsBtn (){
-        return 
+    get clickSearchDoctorsBtn (){
+        return $('[title="Search Input"]');
     }
     
     
-    get searchInput(){
-        return 
-    }
+    // get inputSearchField(){
+    //     return 
+    // }
 
     
 
-    get submitBtn(){
-        return 
+    // get submitBtn(){
+    //     return 
+    // }
+
+    // get inputResult (){
+    //     return ()
+    // }
+
+    public async clickSearchButton (){
+        await this.clickSearchDoctorsBtn.click();
     }
 
 }

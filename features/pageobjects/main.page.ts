@@ -9,9 +9,13 @@ class MainPage extends Page {
         return $('button=Alle akzeptieren')
     }
 
-    public async clickSearchDoctors() {
+    public async acceptCookies() {
         await this.acceptCookieBtn.click();
+    }
+
+    public async clickSearchDoctors() {
         await this.searchDoctorsBtn.click();
+        await expect(browser).toHaveUrl('https://demo.clickdoc.de/cd-de/search')
     }
 }
 
