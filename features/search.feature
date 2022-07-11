@@ -6,12 +6,7 @@ Feature: CLICKDOC Page
     And I click on Alle akzeptieren button
     When I click on the doctors search button 
     And I go to the search page
-#   And I insert the searchterm on the input search field 
-#   And I click on the search button
-#   Then I should see as a result Dr Peter Test and Dr Peter Test ABD 
-
-#    Examples:
-#        | homepage | search button | | searchterm
-#        |search button| Dr Peter Test | Dr Peter Test ABD |
-      
+    And I search for the term 'Peter Test'
+    Then I should see as a result 'Dr. Peter Test'
+    And I should see as a result 'Dr. Peter Test ABD'       
       

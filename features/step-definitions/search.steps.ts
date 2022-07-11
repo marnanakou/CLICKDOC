@@ -21,6 +21,10 @@ When(/I go to the search page/, async () => {
     await MainPage.redirectedToSearchPage()
 });
 
-// Then(/I insert the searchterm on the input search field/, async () => {
-//     await SearchPage.
-// });
+When(/I search for the term 'Peter Test'/, async () => {
+    await SearchPage.searchForDoctor('Peter Test')
+})
+
+Then(/I should see as a result '(.+)'/, async (doctorName)=>{
+    await SearchPage.searchForDoctorsResults(doctorName)
+})

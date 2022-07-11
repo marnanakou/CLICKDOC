@@ -1,31 +1,33 @@
+import { isThisTypeNode } from 'typescript';
 import Page from './page'
+import assert from 'assert'
 
 class SearchPage extends Page {
 
-    
-    get clickSearchDoctorsBtn (){
-        return $('[title="Search Input"]');
+
+    get searchDoctorsBtn () {
+        return $('button=Suchen');
     }
     
-    
-    // get inputSearchField(){
-    //     return 
-    // }
-
-    
-
-    // get submitBtn(){
-    //     return 
-    // }
-
-    // get inputResult (){
-    //     return ()
-    // }
-
-    public async clickSearchButton (){
-        await this.clickSearchDoctorsBtn.click();
+    get inputSearchField() {
+        return $('#search-query-typeahead')
     }
 
+    get allSearchResults(){
+        return $$('.contact-title')
+    }
+
+    public async searchForDoctor(searchString: string) {
+        await this.inputSearchField.setValue(searchString);
+        await this.searchDoctorsBtn.click();
+        await expect(this.allSearchResults).toBeElementsArrayOfSize(2);
+    }
+
+    public async searchForDoctorsResults(doctorName: string) {
+        const isDoctorInResults = await this.allSearchResults.some(
+            async el => await el.getText() === doctorName)
+        await expect(isDoctorInResults).toStrictEqual(true)
+    }
 }
 
 export default new SearchPage();
