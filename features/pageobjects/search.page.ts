@@ -1,6 +1,4 @@
-import { isThisTypeNode } from 'typescript';
 import Page from './page'
-import assert from 'assert'
 
 class SearchPage extends Page {
 
