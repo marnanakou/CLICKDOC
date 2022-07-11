@@ -5,11 +5,11 @@ import MainPage from '../pageobjects/main.page';
 import SearchPage from '../pageobjects/search.page';
 
 
-Given(/I open the browser and navigate on the homepage/, async () => {
+Given(/I open the browser and navigate to the homepage/, async () => {
     await MainPage.open("/")
 });
 
-Given(/I click on Alle akzeptieren button/, async () => {
+Given(/I accept all cookies/, async () => {
     await MainPage.acceptCookies()
 })
 
@@ -21,10 +21,10 @@ When(/I go to the search page/, async () => {
     await MainPage.redirectedToSearchPage()
 });
 
-When(/I search for the term 'Peter Test'/, async () => {
-    await SearchPage.searchForDoctor('Peter Test')
+When(/I search for the term '(.+)'/, async (searchTerm: string) => {
+    await SearchPage.searchForDoctor(searchTerm)
 })
 
-Then(/I should see as a result '(.+)'/, async (doctorName)=>{
+Then(/I should see '(.+)' as one of the results/, async (doctorName: string)=>{
     await SearchPage.searchForDoctorsResults(doctorName)
 })

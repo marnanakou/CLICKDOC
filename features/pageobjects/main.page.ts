@@ -6,7 +6,7 @@ class MainPage extends Page {
     }
 
     get acceptCookieBtn() {
-        return $('button=Alle akzeptieren')
+        return $('button=Alle akzeptieren');
     }
 
     public async acceptCookies() {
@@ -17,8 +17,8 @@ class MainPage extends Page {
         await this.searchDoctorsBtn.click();
     }
 
-    public async redirectedToSearchPage(){
-        await expect(browser).toHaveUrl('https://demo.clickdoc.de/cd-de/search')
+    public async redirectedToSearchPage() {
+        await expect(browser).toHaveUrl(browser.options.baseUrl + "/search")
     }
 }
 
