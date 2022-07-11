@@ -1,10 +1,10 @@
 Feature: CLICKDOC Page
 
-  Scenario: As a user, I can search for doctors
+  Scenario: As a user, I can search for doctors on the search field
 
     Given I open the browser and navigate on the homepage
-    When I click on Alle akzeptieren button
-    And I click on the doctors search button 
+    And I click on Alle akzeptieren button
+    When I click on the doctors search button 
 #   And I go to https://demo.clickdoc.de/cd-de/search
 #   And I insert the searchterm on the input search field 
 #   And I click on the search button
